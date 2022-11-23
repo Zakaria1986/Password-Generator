@@ -93,9 +93,10 @@ var upperCasedCharacters = [
 
 // Generating raondom numbers test - i'm gonna go with this as this seem more fun
 
-// var arr = [upperCasedCharacters, lowerCasedCharacters, specialCharacters, numericCharacters];
+var arrOriginal = [upperCasedCharacters, lowerCasedCharacters, specialCharacters, numericCharacters];
+console.log(arrOriginal);
 var arr = [];
-console.log(arr);
+// console.log(arr);
 
 // var userInput;
 // userInput = prompt("Enter a number for password between 10 to 64: ");
@@ -116,29 +117,64 @@ console.log(arr);
 
 // Write confirms dailog box here and then based on user choice add or remove the characters from the list
 
-var conStoredVal = confirm("do you want special charectors");
-console.log(conStoredVal === true);
-if (conStoredVal) {
-  arr.push(specialCharacters);
-}
+// var conStoredVal = confirm("do you want special charectors");
+// console.log(conStoredVal === true);
+// if (conStoredVal) {
+//   arr.push(specialCharacters);
+// }
 
-var userLowercaseChoice = confirm("do you want special LOWERCASE LETTERS?");
-console.log(userLowercaseChoice);
-if (userLowercaseChoice) {
-  arr.push(lowerCasedCharacters);
-}
+// var userLowercaseChoice = confirm("do you want special LOWERCASE LETTERS?");
+// console.log(userLowercaseChoice);
+// if (userLowercaseChoice) {
+//   arr.push(lowerCasedCharacters);
+// }
 
-var userNumChoice = confirm("do you want Nummbers added to your password?");
-console.log(userNumChoice);
-if (userNumChoice) {
-  arr.push(numericCharacters);
-}
+// var userNumChoice = confirm("do you want Nummbers added to your password?");
+// console.log(userNumChoice);
+// if (userNumChoice) {
+//   arr.push(numericCharacters);
+// }
 
-var userUppercaseChoice = confirm("do you want Nummbers added to your password?");
-console.log(upperCasedCharacters);
-if (upperCasedCharacters) {
-  arr.push(upperCasedCharacters);
-}
+// var userUppercaseChoice = confirm("do you want Nummbers added to your password?");
+// console.log(upperCasedCharacters);
+// if (upperCasedCharacters) {
+//   arr.push(upperCasedCharacters);
+// }
+
+// Simplifying the code
+// var conStoredVal = confirm("do you want special charectors");
+// var userLowercaseChoice = confirm("do you want special LOWERCASE LETTERS?");
+// var userNumChoice = confirm("do you want Nummbers added to your password?");
+// var userUppercaseChoice = confirm("do you want Nummbers added to your password?");
+
+var userPassCriteria = [
+  {
+    userChoice: confirm("Do you want special charectors?"),
+    characters: specialCharacters
+  },
+  {
+    userChoice: confirm("Do you want special lower cased characters?"),
+    characters: lowerCasedCharacters
+  },
+  {
+    userChoice: confirm("Do you want Nummbers added to your password?"),
+    characters: numericCharacters
+  },
+  {
+    userChoice: confirm("do you want add Uppder case to your password?"),
+    characters: upperCasedCharacters
+  }
+]
+
+
+userPassCriteria.forEach(items => {
+  console.log(items.userChoice);
+  if (items.userChoice === true) {
+    arr.push(items.characters);
+  }
+});
+
+
 
 console.log(arr);
 
