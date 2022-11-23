@@ -113,24 +113,22 @@ if (userInput < 10 || userInput > 64) {
   }
 }
 
+var emptArr = [];
 
+for (var i = emptArr.length; i < userInput; i++) {
+  console.log("printing index: ", i);
 
-// var emptArr = [];
+  var indexRandom = Math.floor(Math.random(arr.length) * arr.length);
+  console.log('Random computer choice of index: ', indexRandom);
 
-// for (var i = emptArr.length; i < passInt; i++) {
-//   console.log("printing index: ", i);
+  var accessRandonArrays = Math.floor(Math.random(arr[indexRandom].length) * arr[indexRandom].length);
+  console.log(accessRandonArrays);
+  var char = arr[indexRandom][accessRandonArrays];
 
-//   var indexRandom = Math.floor(Math.random(arr.length) * arr.length);
-//   console.log('Random computer choice of index: ', indexRandom);
+  emptArr.push(char);
 
-//   var accessRandonArrays = Math.floor(Math.random(arr[indexRandom].length) * arr[indexRandom].length);
-//   console.log(accessRandonArrays);
-//   var char = arr[indexRandom][accessRandonArrays];
-
-//   emptArr.push(char);
-
-// }
-// console.log(emptArr);
+}
+console.log(emptArr);
 
 
 
