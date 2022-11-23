@@ -91,61 +91,32 @@ var upperCasedCharacters = [
 // var arr = [...upperCasedCharacters, ...lowerCasedCharacters, ...specialCharacters, ...numericCharacters];
 
 
-// Generating raondom numbers test - i'm gonna go with this as this seem more fun
+// Generating raondom numbers test - i'm gonna go with code below as this as this seem more fun
 
-var arrOriginal = [upperCasedCharacters, lowerCasedCharacters, specialCharacters, numericCharacters];
-console.log(arrOriginal);
+// var arrOriginal = [upperCasedCharacters, lowerCasedCharacters, specialCharacters, numericCharacters];
+// console.log(arrOriginal);
 var arr = [];
 // console.log(arr);
 
-// var userInput;
-// userInput = prompt("Enter a number for password between 10 to 64: ");
+var userInput;
+userInput = prompt("Enter a number for password between 10 to 64: ");
 
-// console.log("Initial value: ", userInput);
+console.log("Initial value: ", userInput);
 
 
-// if (userInput < 10 || userInput > 64) {
-//   for (; true;) {
-//     userInput = prompt("Enter a number for password should be at least 10 or more but not more than 64: ");
-//     console.log("Initial value: ", userInput);
-//     if (userInput >= 10 && userInput <= 64) {
-//       break;
-//     }
-//     else { continue; }
-//   }
-// }
+if (userInput < 10 || userInput > 64) {
+  for (; true;) {
+    alert("Your input:" + userInput)
+    userInput = prompt("Enter a number for password should be at least 10 or more but not more than 64: ");
+    console.log("Initial value: ", userInput);
+    if (userInput >= 10 && userInput <= 64) {
+      break;
+    }
+    else { continue; }
+  }
+}
 
 // Write confirms dailog box here and then based on user choice add or remove the characters from the list
-
-// var conStoredVal = confirm("do you want special charectors");
-// console.log(conStoredVal === true);
-// if (conStoredVal) {
-//   arr.push(specialCharacters);
-// }
-
-// var userLowercaseChoice = confirm("do you want special LOWERCASE LETTERS?");
-// console.log(userLowercaseChoice);
-// if (userLowercaseChoice) {
-//   arr.push(lowerCasedCharacters);
-// }
-
-// var userNumChoice = confirm("do you want Nummbers added to your password?");
-// console.log(userNumChoice);
-// if (userNumChoice) {
-//   arr.push(numericCharacters);
-// }
-
-// var userUppercaseChoice = confirm("do you want Nummbers added to your password?");
-// console.log(upperCasedCharacters);
-// if (upperCasedCharacters) {
-//   arr.push(upperCasedCharacters);
-// }
-
-// Simplifying the code
-// var conStoredVal = confirm("do you want special charectors");
-// var userLowercaseChoice = confirm("do you want special LOWERCASE LETTERS?");
-// var userNumChoice = confirm("do you want Nummbers added to your password?");
-// var userUppercaseChoice = confirm("do you want Nummbers added to your password?");
 
 var userPassCriteria = [
   {
@@ -166,7 +137,6 @@ var userPassCriteria = [
   }
 ]
 
-
 userPassCriteria.forEach(items => {
   console.log(items.userChoice);
   if (items.userChoice === true) {
@@ -175,32 +145,26 @@ userPassCriteria.forEach(items => {
 });
 
 
-
 console.log(arr);
 
-// var emptArr = [];
+var emptArr = [];
 
-// for (var i = emptArr.length; i < userInput; i++) {
-//   console.log("printing index: ", i);
+for (var i = emptArr.length; i < userInput; i++) {
+  console.log("printing index: ", i);
 
-//   var indexRandom = Math.floor(Math.random(arr.length) * arr.length);
-//   console.log('Random computer choice of index: ', indexRandom);
+  var indexRandom = Math.floor(Math.random(arr.length) * arr.length);
+  console.log('Random computer choice of index: ', indexRandom);
 
-//   var accessRandonArrays = Math.floor(Math.random(arr[indexRandom].length) * arr[indexRandom].length);
-//   console.log(accessRandonArrays);
-//   var char = arr[indexRandom][accessRandonArrays];
+  var accessRandonArrays = Math.floor(Math.random(arr[indexRandom].length) * arr[indexRandom].length);
+  console.log(accessRandonArrays);
+  var char = arr[indexRandom][accessRandonArrays];
 
-//   emptArr.push(char);
+  emptArr.push(char);
 
-// }
-// console.log(emptArr);
-
-
+}
+console.log(emptArr);
 
 
-// // console.log(arr);
-// console.log("aphabets " + arr.length);
-// console.log(arr[char]);
 
 // Function to prompt user for password options
 function getPasswordOptions() {
