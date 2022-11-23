@@ -106,7 +106,7 @@ console.log("Initial value: ", userInput);
 
 if (userInput < 10 || userInput > 64) {
   for (; true;) {
-    alert("Your input:" + userInput)
+    alert("Your input: " + userInput + " Please enter number between 10 to 64");
     userInput = prompt("Enter a number for password should be at least 10 or more but not more than 64: ");
     console.log("Initial value: ", userInput);
     if (userInput >= 10 && userInput <= 64) {
@@ -128,7 +128,7 @@ var userPassCriteria = [
     characters: lowerCasedCharacters
   },
   {
-    userChoice: confirm("Do you want Nummbers added to your password?"),
+    userChoice: confirm("Do you want Numbers added to your password?"),
     characters: numericCharacters
   },
   {
@@ -150,7 +150,6 @@ console.log(arr);
 var emptArr = [];
 
 for (var i = emptArr.length; i < userInput; i++) {
-  console.log("printing index: ", i);
 
   var indexRandom = Math.floor(Math.random(arr.length) * arr.length);
   console.log('Random computer choice of index: ', indexRandom);
