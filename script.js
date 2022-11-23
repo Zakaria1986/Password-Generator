@@ -172,16 +172,28 @@ function getRandom(arr) {
     emptArr.push(char);
   }
 
+  emptArr.join(" ");
+
   console.log(emptArr);
 
   return emptArr;
 
 }
 
+
+
 // Function to generate password with user input
 function generatePassword() {
-  var getPasswordOptions_output = getPasswordOptions()
-  getRandom(getPasswordOptions_output);
+  var getPasswordOptions_output = getPasswordOptions();
+  var password = getRandom(getPasswordOptions_output);
+
+
+  var finalPass = "";
+
+  password.forEach(l => { finalPass += l; });
+  console.log(finalPass);
+
+  return finalPass;
 }
 
 // Get references to the #generate element
@@ -191,7 +203,6 @@ var generateBtn = document.querySelector('#generate');
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
-
   passwordText.value = password;
 
 }
