@@ -88,14 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-
-
-
 // console.log(emptArr.includes(userPassCriteria[0].upperCasedCharacters));
-
-
-
-
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -108,14 +101,16 @@ function getPasswordOptions() {
 
   var userInput;
   userInput = prompt("Enter a number for password between 10 to 64: ");
-  console.log("Initial value: ", userInput);
+  userInput = +(userInput);
+  console.log(typeof userInput);
 
-  if (userInput < 10 || userInput > 64) {
+  if (isNaN(userInput) || userInput < 10 || userInput > 64) {
     for (; true;) {
-      alert("Your input: " + userInput + " Please enter number between 10 to 64");
+      alert("Your input: " + userInput + " Please enter Only numbers between 10 to 64");
       userInput = prompt("Enter a number for password should be at least 10 or more but not more than 64: ");
-      console.log("Initial value: ", userInput);
-      if (userInput >= 10 && userInput <= 64) {
+      userInput = +(userInput);
+      console.log("Initial value: ", typeof userInput);
+      if (typeof userInput === "number" && userInput >= 10 && userInput <= 64) {
         break;
       }
       else { continue; }
@@ -131,15 +126,15 @@ function getPasswordOptions() {
       characters: specialCharacters
     },
     {
-      userChoice: confirm("Do you want special lower cased characters?"),
+      userChoice: confirm("Do you want your password to have lower cased characters?"),
       characters: lowerCasedCharacters
     },
     {
-      userChoice: confirm("Do you want Numbers added to your password?"),
+      userChoice: confirm("Do you want your password to have Numbers?"),
       characters: numericCharacters
     },
     {
-      userChoice: confirm("do you want add Uppder case to your password?"),
+      userChoice: confirm("Do your want your password to have Uppder case characters?"),
       characters: upperCasedCharacters
     }
   ]
@@ -172,12 +167,9 @@ function getRandom(arr) {
     emptArr.push(char);
   }
 
-  emptArr.join(" ");
-
   console.log(emptArr);
 
   return emptArr;
-
 }
 
 
@@ -187,10 +179,13 @@ function generatePassword() {
   var getPasswordOptions_output = getPasswordOptions();
   var password = getRandom(getPasswordOptions_output);
 
-
+  console.log("testing...", getPasswordOptions_output);
   var finalPass = "";
 
+
+
   password.forEach(l => { finalPass += l; });
+
   console.log(finalPass);
 
   return finalPass;
