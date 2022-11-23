@@ -187,8 +187,6 @@ function getRandom(arr) {
   return emptArr;
 }
 
-
-
 // Function to generate password with user input
 function generatePassword() {
 
