@@ -19,3 +19,15 @@ This app generates ramdom password. To generate password:
 ![alt text](/img/psgenerator.gif)
 
 
+
+** Code Explanation: 
+
+
+
+![alt text](/script.js)
+
+
+
+If you like please see my script.js file. 
+
+Thank you for reading through. 
